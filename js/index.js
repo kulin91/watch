@@ -1,7 +1,7 @@
-const timeNumbersElement = document.getElementById("time-numbers");
-const secondHandElement = document.getElementById("second_hand");
-const minuteHandElement = document.getElementById("minute_hand");
-const hourseHandElement = document.getElementById("hourse_hand");
+const timeNumbersElement = document.getElementById("belarus_time-numbers");
+const secondHandElement = document.getElementById("belarus_second_hand");
+const minuteHandElement = document.getElementById("belarus_minute_hand");
+const hourseHandElement = document.getElementById("belarus_hourse_hand");
 
 
 function timeNow() {

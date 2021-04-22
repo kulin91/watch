@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+.wall {
+  display: flex;
+
+}
+
 .watch_belarus {
   display: flex;
   flex-direction: column;
@@ -76,36 +81,96 @@
   justify-content: center;
 }
 
-.number_12_clock{
+.number_1_clock{
   position: absolute;
-  top: 1%;
-  z-index: 2;
+  top: 12%;
+  right: 29%;
+  transform: rotate(30deg);
+}
+
+.number_2_clock{
+  position: absolute;
+  top: 27%;
+  right: 14%;
+  transform: rotate(60deg);
   /* font-size: 32px; */
 }
 
 .number_3_clock{
   position: absolute;
   right: 4%;
-  z-index: 2;
   /* font-size: 32px; */
+}
+
+.number_4_clock{
+  position: absolute;
+  top: 69%;
+  right: 13%;
+  transform: rotate(120deg);
+}
+
+.number_5_clock{
+  position: absolute;
+  top: 85%;
+  right: 29%;
+  transform: rotate(150deg);
 }
 
 .number_6_clock{
   position: absolute;
   bottom: 1%;
-  z-index: 2;
+}
+
+.number_7_clock{
+  position: absolute;
+  top: 85%;
+  right: 71%;
+  transform: rotate(210deg);
+}
+
+.number_8_clock{
+  position: absolute;
+  top: 69%;
+  right: 86%;
+  transform: rotate(240deg);
 }
 
 .number_9_clock{
   position: absolute;
   left: 4%;
-  z-index: 2;
   
+}
+
+.number_10_clock{
+  position: absolute;
+  top: 27%;
+  right: 86%;
+  transform: rotate(300deg);
+}
+
+.number_11_clock{
+  position: absolute;
+  top: 12%;
+  left: 29%;
+  transform: rotate(330deg);
+}
+
+.number_12_clock{
+  position: absolute;
+  top: 1%;
 }
 
 .form-numbers {
   font-size: 36px;
   color: #424242;
+  z-index: 2;
+}
+
+.hour_divisions {
+  background-color: #424242;
+  width: 2px;
+  height: 10px;
+  z-index: 2
 }
 
 .clock_dial {
@@ -119,7 +184,7 @@
   justify-content: center;
 }
 
-#second_hand {
+#belarus_second_hand {
   position: absolute;
   width: 2px;
   height: 180px;
@@ -131,7 +196,7 @@
   background: #212121;
 }
 
-#minute_hand {
+#belarus_minute_hand {
   position: absolute;
   width: 3px;
   height: 150px;
@@ -143,7 +208,7 @@
   background: #1a1a1a;
 }
 
-#hourse_hand {
+#belarus_hourse_hand {
   position: absolute;
   width: 4px;
   height: 100px;
