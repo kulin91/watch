@@ -9,7 +9,7 @@
 
 }
 
-.watch_belarus {
+.watch {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,13 +30,14 @@
 
 .box-2 {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 50px;
+  height: 75px;
   width: 250px;
 }
 
-.box-3 {
+.box-3-belarus {
   /* height: 75px;
   width: 250px; */
   display: flex;
@@ -220,14 +221,56 @@
   background: #222222;
 }
 
-.first_color_flag {
-  width: 100px;
+.first_color_flag_belarus {
+  width: 99px;
   height: 20px;
   background-color: white;
 }
 
-.second_color_flag {
-  width: 100px;
-  height: 15px;
+.second_color_flag_belarus {
+  width: 99px;
+  height: 14px;
+  background-color: red;
+}
+
+#france_second_hand {
+  position: absolute;
+  width: 2px;
+  height: 180px;
+}
+
+#france_minute_hand {
+  position: absolute;
+  width: 3px;
+  height: 150px;
+}
+
+#france_hourse_hand {
+  position: absolute;
+  width: 4px;
+  height: 100px;
+}
+
+.box-3-france {
+  display: flex;
+  border: 1px groove #E0E0E0;
+}
+
+.first_color_flag_france {
+  width: 33px;
+  height: 54px;
+  background-color: blue;
+}
+
+
+.second_color_flag_france {
+  width: 33px;
+  height: 54px;
+  background-color: white;
+}
+
+.third_color_flag_france {
+  width: 33px;
+  height: 54px;
   background-color: red;
 }
