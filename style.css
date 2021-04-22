@@ -4,46 +4,115 @@
   box-sizing: border-box;
 }
 
-html,
-body {
-  height: 100%;
-  width: 100%;
-    display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* .main {
+.watch_belarus {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  height: 100%;
-} */
+  /* border: 5px groove red; */
+  width: 260px;
+  background-color: #FAFAFA;
+}
 
 .box {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 600px;
-  width: 600px;
-  background-color: aquamarine;
+  height: 250px;
+  width: 250px;
+  /* background-color: aquamarine; */
 }
 
 .box-2 {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 50px;
+  width: 250px;
+}
+
+.box-3 {
+  /* height: 75px;
+  width: 250px; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px groove #E0E0E0;
+}
+
+
+.box-4 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 100px;
-  width: 600px;
-  background-color: rgb(150, 127, 255);
+  width: 250px;
+  /* background-color: rgb(150, 127, 255); */
+}
+
+
+
+.clock_dial_bezel {
+  width: 225px;
+  height: 225px;
+  background: #424242;
+  border-radius: 290px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.clock_dial_numbers {
+  width: 220px;
+  height: 220px;
+  background: #616161;
+  border-radius: 110px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.number_12_clock{
+  position: absolute;
+  top: 1%;
+  z-index: 2;
+  /* font-size: 32px; */
+}
+
+.number_3_clock{
+  position: absolute;
+  right: 4%;
+  z-index: 2;
+  /* font-size: 32px; */
+}
+
+.number_6_clock{
+  position: absolute;
+  bottom: 1%;
+  z-index: 2;
+}
+
+.number_9_clock{
+  position: absolute;
+  left: 4%;
+  z-index: 2;
+  
+}
+
+.form-numbers {
+  font-size: 36px;
+  color: #424242;
 }
 
 .clock_dial {
-  width: 500px;
-  height: 500px;
-  background: #616161;
-  border-radius: 250px;
+  width: 210px;
+  height: 210px;
+  background: #E0E0E0;
+  border-radius: 105px;
   z-index: 1;
   display: flex;
   align-items: center;
@@ -52,36 +121,48 @@ body {
 
 #second_hand {
   position: absolute;
-  width: 10px;
-  height: 480px;
+  width: 2px;
+  height: 180px;
 }
 
 .second_hand_colored {
-  width: 10px;
-  height: 240px;
-  background: #904db6;
+  width: 2px;
+  height: 90px;
+  background: #212121;
 }
 
 #minute_hand {
   position: absolute;
-  width: 10px;
-  height: 440px;
+  width: 3px;
+  height: 150px;
 }
 
 .minute_hand_colored {
-  width: 10px;
-  height: 220px;
-  background: #4d4fb6;
+  width: 3px;
+  height: 75px;
+  background: #1a1a1a;
 }
 
 #hourse_hand {
   position: absolute;
-  width: 10px;
-  height: 240px;
+  width: 4px;
+  height: 100px;
 }
 
 .hourse_hand_colored {
-  width: 10px;
-  height: 120px;
-  background: #0d2e15;
+  width: 4px;
+  height: 50px;
+  background: #222222;
+}
+
+.first_color_flag {
+  width: 100px;
+  height: 20px;
+  background-color: white;
+}
+
+.second_color_flag {
+  width: 100px;
+  height: 15px;
+  background-color: red;
 }
