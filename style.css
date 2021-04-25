@@ -6,6 +6,8 @@
 
 .wall {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 
 }
 
@@ -14,7 +16,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* border: 5px groove red; */
   width: 260px;
   background-color: #FAFAFA;
 }
@@ -25,7 +26,6 @@
   justify-content: center;
   height: 250px;
   width: 250px;
-  /* background-color: aquamarine; */
 }
 
 .box-2 {
@@ -37,27 +37,13 @@
   width: 250px;
 }
 
-.box-3-belarus {
-  /* height: 75px;
-  width: 250px; */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border: 1px groove #E0E0E0;
-}
-
-
 .box-4 {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100px;
   width: 250px;
-  /* background-color: rgb(150, 127, 255); */
 }
-
-
 
 .clock_dial_bezel {
   width: 225px;
@@ -94,13 +80,11 @@
   top: 27%;
   right: 14%;
   transform: rotate(60deg);
-  /* font-size: 32px; */
 }
 
 .number_3_clock{
   position: absolute;
   right: 4%;
-  /* font-size: 32px; */
 }
 
 .number_4_clock{
@@ -185,7 +169,7 @@
   justify-content: center;
 }
 
-#belarus_second_hand {
+.second_hand {
   position: absolute;
   width: 2px;
   height: 180px;
@@ -197,7 +181,7 @@
   background: #212121;
 }
 
-#belarus_minute_hand {
+.minute_hand {
   position: absolute;
   width: 3px;
   height: 150px;
@@ -209,7 +193,7 @@
   background: #1a1a1a;
 }
 
-#belarus_hourse_hand {
+.hourse_hand {
   position: absolute;
   width: 4px;
   height: 100px;
@@ -219,286 +203,5 @@
   width: 4px;
   height: 50px;
   background: #222222;
-}
-
-.first_color_flag_belarus {
-  width: 99px;
-  height: 19px;
-  background-color: white;
-}
-
-.second_color_flag_belarus {
-  width: 99px;
-  height: 16px;
-  background-color: red;
-}
-
-#france_second_hand {
-  position: absolute;
-  width: 2px;
-  height: 180px;
-}
-
-#france_minute_hand {
-  position: absolute;
-  width: 3px;
-  height: 150px;
-}
-
-#france_hourse_hand {
-  position: absolute;
-  width: 4px;
-  height: 100px;
-}
-
-.box-3-france {
-  display: flex;
-  border: 1px groove #E0E0E0;
-}
-
-.first_color_flag_france {
-  width: 33px;
-  height: 54px;
-  background-color: blue;
-}
-
-
-.second_color_flag_france {
-  width: 33px;
-  height: 54px;
-  background-color: white;
-}
-
-.third_color_flag_france {
-  width: 33px;
-  height: 54px;
-  background-color: red;
-}
-
-
-
-
-
-
-#china_second_hand {
-  position: absolute;
-  width: 2px;
-  height: 180px;
-}
-
-#china_minute_hand {
-  position: absolute;
-  width: 3px;
-  height: 150px;
-}
-
-#china_hourse_hand {
-  position: absolute;
-  width: 4px;
-  height: 100px;
-}
-
-.box-3-china {
-  display: flex;
-  border: 1px groove #E0E0E0;
-}
-
-.first_color_flag_china {
-  width: 99px;
-  height: 54px;
-  background-color: red;
-  position: relative;
-}
-
-
-
-.flag_china_star_main {
-  position: absolute;
-  top: 15%;
-  left: 10%;
-	width: 6px;
-	height: 6px;
-	background: rgb(253, 228, 0);
-	-moz-border-radius: 50px;
-	-webkit-border-radius: 50px;
-	border-radius: 50px;
-}
-
-.flag_china_star_little {
-  width: 3px;
-	height: 3px;
-	background: rgb(253, 228, 0);
-	-moz-border-radius: 50px;
-	-webkit-border-radius: 50px;
-	border-radius: 50px;
-}
-
-.flag_china_star_1 {
-  position: absolute;
-  top: 6%;
-  left: 16%;
-}
-
-.flag_china_star_2 {
-  position: absolute;
-  top: 14%;
-  left: 20%;
-}
-
-.flag_china_star_3 {
-  position: absolute;
-  top: 24%;
-  left: 20%;
-}
-
-.flag_china_star_4 {
-  position: absolute;
-  top: 30%;
-  left: 16%;
-}
-
-
-#usa_second_hand {
-  position: absolute;
-  width: 2px;
-  height: 180px;
-}
-
-#usa_minute_hand {
-  position: absolute;
-  width: 3px;
-  height: 150px;
-}
-
-#usa_hourse_hand {
-  position: absolute;
-  width: 4px;
-  height: 100px;
-}
-
-.box-3-usa {
-  display: flex;
-  flex-direction: column;
-  border: 1px groove #E0E0E0;
-  position: relative;
-}
-
-.blue_rectangle_flag_usa {
-  position: absolute;
-  height: 22px;
-  width: 44px;
-  background-color: blue;
-}
-
-.stars_type_usa {
-  width: 3px;
-	height: 3px;
-	background: rgb(255, 255, 255);
-	-moz-border-radius: 50px;
-	-webkit-border-radius: 50px;
-	border-radius: 50px;
-}
-
-.stars_1_usa {
-  position: absolute;
-  top: 9%;
-  left: 10%;
-}
-
-.stars_2_usa {
-  position: absolute;
-  top: 9%;
-  left: 30%;
-}
-
-.stars_3_usa {
-  position: absolute;
-  top: 9%;
-  left: 20%;
-}
-
-.stars_4_usa {
-  position: absolute;
-  top: 19%;
-  left: 15%;
-}
-
-.stars_5_usa {
-  position: absolute;
-  top: 18%;
-  left: 25%;
-}
-
-.stars_6_usa {
-  position: absolute;
-  top: 28%;
-  left: 17%;
-}
-
-.stars_7_usa {
-  position: absolute;
-  top: 20%;
-  left: 5%;
-}
-
-.stars_8_usa {
-  position: absolute;
-  top: 29%;
-  left: 10%;
-}
-
-.stars_9_usa {
-  position: absolute;
-  top: 29%;
-  left: 25%;
-}
-
-.stars_10_usa {
-  position: absolute;
-  top: 23%;
-  left: 33%;
-}
-
-.first_color_flag_usa {
-  width: 99px;
-  height: 7px;
-  background-color: red;
-}
-
-
-.second_color_flag_usa {
-  width: 99px;
-  height: 7px;
-  background-color: white;
-}
-
-.third_color_flag_usa {
-  width: 99px;
-  height: 8px;
-  background-color: red;
-}
-
-.fourth_color_flag_usa {
-  width: 99px;
-  height: 7px;
-  background-color: white;
-}
-
-.fifth_color_flag_usa {
-  width: 99px;
-  height: 7px;
-  background-color: red;
-}
-
-.sixth_color_flag_usa {
-  width: 99px;
-  height: 8px;
-  background-color: white;
-}
-
-.seventh_color_flag_usa {
-  width: 99px;
-  height: 7px;
-  background-color: red;
 }
 

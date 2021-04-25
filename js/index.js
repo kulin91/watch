@@ -1,41 +1,87 @@
-const timeNumbersElementForBelarus = document.getElementById("belarus_time-numbers");
-const secondHandElementForBelarus = document.getElementById("belarus_second_hand");
-const minuteHandElementForBelarus = document.getElementById("belarus_minute_hand");
-const hourseHandElementForBelarus = document.getElementById("belarus_hourse_hand");
+const config = [
+  {
+    country: "Belarus",
+    city: "Minsk",
+    region: "UTC+3",
+    key: "by",
+    color: "#FAFAFA",
+  },
+  {
+    country: "France",
+    city: "Paris",
+    region: "UTC+2",
+    key: "fr",
+    color: "#FAFAFA",
+  },
+  {
+    country: "China",
+    city: "Beijing",
+    region: "UTC+8",
+    key: "ch",
+    color: "#FAFAFA",
+  },
+  {
+    country: "Canada",
+    city: "Ottawa",
+    region: "UTC-4",
+    key: "cn",
+    color: "#FAFAFA",
+  },
+  {
+    country: "Poland",
+    city: "Warsaw",
+    region: "UTC+2",
+    key: "pl",
+    color: "#FAFAFA",
+  },
+  {
+    country: "Germany",
+    city: "Berlin",
+    region: "UTC+2",
+    key: "gr",
+    color: "#FAFAFA",
+  },
+  {
+    country: "Brazil",
+    city: "Rio de Janeiro",
+    region: "UTC-3",
+    key: "br",
+    color: "#FAFAFA",
+  },
+  {
+    country: "England",
+    city: "London",
+    region: "UTC+1",
+    key: "en",
+    color: "#FAFAFA",
+  },
+  {
+    country: "Africa",
+    city: "Algiers",
+    region: "UTC+1",
+    key: "af",
+    color: "#FAFAFA",
+  },
+  {
+    country: "Australia",
+    city: "Sydney",
+    region: "UTC+10",
+    key: "au",
+    color: "#FAFAFA",
+  },
+];
 
-const timeNumbersElementForFrance = document.getElementById("france_time-numbers");
-const secondHandElementForFrance = document.getElementById("france_second_hand");
-const minuteHandElementForFrance = document.getElementById("france_minute_hand");
-const hourseHandElementForFrance = document.getElementById("france_hourse_hand");
-
-const timeNumbersElementForChina = document.getElementById("china_time-numbers");
-const secondHandElementForChina = document.getElementById("china_second_hand");
-const minuteHandElementForChina = document.getElementById("china_minute_hand");
-const hourseHandElementForChina = document.getElementById("china_hourse_hand");
-
-const timeNumbersElementForUSA = document.getElementById("usa_time-numbers");
-const secondHandElementForUSA = document.getElementById("usa_second_hand");
-const minuteHandElementForUSA = document.getElementById("usa_minute_hand");
-const hourseHandElementForUSA = document.getElementById("usa_hourse_hand");
-
-const regionFrance = 'UTC+2';
-const regionBelarus = 'UTC+3';
-const regionChina = 'UTC+8';
-const regionUSA = 'UTC-7';
-
+function randomColor() {
+  const result = '#' + (Math.random().toString(16) + '000000')
+  .substring(2, 8).toUpperCase();
+  return result;
+}
 
 function timeNow(region) {
   const currentTime = luxon.DateTime.now().setZone(region);
   const result = currentTime.toLocaleString(luxon.DateTime.TIME_24_WITH_SECONDS);
   return result;
 };
-
-
-timeNumbersElementForBelarus.innerHTML = timeNow(regionBelarus);
-timeNumbersElementForFrance.innerHTML = timeNow(regionFrance);
-timeNumbersElementForChina.innerHTML = timeNow(regionChina);
-timeNumbersElementForUSA.innerHTML = timeNow(regionUSA);
-
 
 function createSecondDeg(region) {
   const timesToClockHand = luxon.DateTime.now().setZone(region);
@@ -48,7 +94,6 @@ function createSecondDeg(region) {
   return result;
 }
 
-
 function createMinuteDeg(region) {
   const timesToClockHand = luxon.DateTime.now().setZone(region);
   const minutePosition = timesToClockHand.minute;
@@ -59,7 +104,6 @@ function createMinuteDeg(region) {
   }
   return result;
 }
-
 
 function createHourseDeg(region) {
   const timesToClockHand = luxon.DateTime.now().setZone(region);
@@ -72,46 +116,58 @@ function createHourseDeg(region) {
   return result;
 }
 
+function createWatchers(watchConfig) {
+  const secondHandId = `${watchConfig.key}_second_hand`;
+  const minuteHandId = `${watchConfig.key}_minute_hand`;
+  const hourseHandId = `${watchConfig.key}_hourse_hand`;
+  const timeNumbersId = `${watchConfig.key}_time-numbers`;
+  const nameOfCountryId = `${watchConfig.key}_name_of_country`;
+  const countryCityId = `${watchConfig.key}_country_city`;
+  const watchColorId = `${watchConfig.key}_watch`;
 
-setInterval(() => {
-  timeNumbersElementForBelarus.innerHTML = timeNow(regionBelarus);
-  const angleSecondForBelarus = createSecondDeg(regionBelarus);
-  secondHandElementForBelarus.style.transform = `rotate(${angleSecondForBelarus}deg)`;
-  const angleMinuteForBelarus = createMinuteDeg(regionBelarus);
-  minuteHandElementForBelarus.style.transform = `rotate(${angleMinuteForBelarus}deg)`;
-  const angleHourseForBelarus = createHourseDeg(regionBelarus);
-  hourseHandElementForBelarus.style.transform = `rotate(${angleHourseForBelarus}deg)`;
+  const temp = document.getElementById("watch_template");
+  const clone = temp.content.cloneNode(true);
 
-  timeNumbersElementForFrance.innerHTML = timeNow(regionFrance);
-  const angleSecondForFrance = createSecondDeg(regionFrance);
-  secondHandElementForFrance.style.transform = `rotate(${angleSecondForFrance}deg)`;
-  const angleMinuteForFrance = createMinuteDeg(regionFrance);
-  minuteHandElementForFrance.style.transform = `rotate(${angleMinuteForFrance}deg)`;
-  const angleHourseForFrance = createHourseDeg(regionFrance);
-  hourseHandElementForFrance.style.transform = `rotate(${angleHourseForFrance}deg)`;
+  clone.getElementById("second_hand").id = secondHandId;
+  clone.getElementById("minute_hand").id = minuteHandId;
+  clone.getElementById("hourse_hand").id = hourseHandId;
+  clone.getElementById("time-numbers").id = timeNumbersId;
+  clone.getElementById("name_of_country").id = nameOfCountryId;
+  clone.getElementById("country_city").id = countryCityId;
+  clone.getElementById("watch").id = watchColorId;
 
-  timeNumbersElementForChina.innerHTML = timeNow(regionChina);
-  const angleSecondForChina = createSecondDeg(regionChina);
-  secondHandElementForChina.style.transform = `rotate(${angleSecondForChina}deg)`;
-  const angleMinuteForChina = createMinuteDeg(regionChina);
-  minuteHandElementForChina.style.transform = `rotate(${angleMinuteForChina}deg)`;
-  const angleHourseForChina = createHourseDeg(regionChina);
-  hourseHandElementForChina.style.transform = `rotate(${angleHourseForChina}deg)`;
+  const wall = document.getElementById("wall");
+  wall.appendChild(clone);
 
-  timeNumbersElementForUSA.innerHTML = timeNow(regionUSA);
-  const angleSecondForUSA = createSecondDeg(regionUSA);
-  secondHandElementForUSA.style.transform = `rotate(${angleSecondForUSA}deg)`;
-  const angleMinuteForUSA = createMinuteDeg(regionUSA);
-  minuteHandElementForUSA.style.transform = `rotate(${angleMinuteForUSA}deg)`;
-  const angleHourseForUSA = createHourseDeg(regionUSA);
-  hourseHandElementForUSA.style.transform = `rotate(${angleHourseForUSA}deg)`;
-}, 1000);
+  const secondHandElement = document.getElementById(secondHandId);
+  const minuteHandElement = document.getElementById(minuteHandId);
+  const hourseHandElement = document.getElementById(hourseHandId);
+  const timeNumbersElement = document.getElementById(timeNumbersId);
+  const nameOfCountryElement = document.getElementById(nameOfCountryId);
+  const countryCityElement = document.getElementById(countryCityId);
+  const watchColorElement = document.getElementById(watchColorId);
+
+  nameOfCountryElement.innerHTML = watchConfig.country;
+  countryCityElement.innerHTML = watchConfig.city;
+  watchColorElement.style.backgroundColor = `${randomColor()}`;
+
+  setInterval(() => {
+    timeNumbersElement.innerHTML = timeNow(watchConfig.region);
+    const angleSecond = createSecondDeg(watchConfig.region);
+    secondHandElement.style.transform = `rotate(${angleSecond}deg)`;
+    const angleMinute = createMinuteDeg(watchConfig.region);
+    minuteHandElement.style.transform = `rotate(${angleMinute}deg)`;
+    const angleHourse = createHourseDeg(watchConfig.region);
+    hourseHandElement.style.transform = `rotate(${angleHourse}deg)`;
+  }, 1000)
+}
 
 
 
+config.forEach(createWatchers)
 
 
-
+//******************************************************** */
 
 
 
