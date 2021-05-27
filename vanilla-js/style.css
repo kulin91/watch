@@ -169,37 +169,37 @@
   justify-content: center;
 }
 
-.second_hand {
+.second_tick {
   position: absolute;
   width: 2px;
   height: 180px;
 }
 
-.second_hand_colored {
+.second_tick_colored {
   width: 2px;
   height: 90px;
   background: #212121;
 }
 
-.minute_hand {
+.minute_tick {
   position: absolute;
   width: 3px;
   height: 150px;
 }
 
-.minute_hand_colored {
+.minute_tick_colored {
   width: 3px;
   height: 75px;
   background: #1a1a1a;
 }
 
-.hourse_hand {
+.hours_tick {
   position: absolute;
   width: 4px;
   height: 100px;
 }
 
-.hourse_hand_colored {
+.hours_tick_colored {
   width: 4px;
   height: 50px;
   background: #222222;
