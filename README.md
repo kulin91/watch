@@ -1,5 +1,9 @@
 # Create a watch
 
+## Project setup
+
+* npm install
+
 ## Task description
 
 ### 1.Create a clock that will show the time in real time.
